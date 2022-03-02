@@ -18,7 +18,7 @@ readExcel("resources/company_data/Competitors.xlsx").then(res => {
 
 const handleSearch = () => {
   const select = document.getElementById("inputGroupSelect01");
-  window.location.href = `/website/company.html?id=${select.value}`;
+  window.location.href = `website/company.html?id=${select.value}`;
 };
 
 const searchBtn = document.getElementById("search-btn");
