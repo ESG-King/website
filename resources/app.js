@@ -1,4 +1,5 @@
 "use strict";
+window.location = '/website';
 
 readExcel("resources/company_data/Competitors.xlsx").then(res => {
   const select = document.getElementById("inputGroupSelect01");
