@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TCFD Resources</title>
+        <!-- <head>
+        <body style="background-color:#1a1a1a;"></body>
+         <head> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function (){
+                $("#slink").click(function (){
+                    $('html, body').animate({
+                        scrollTop: $("#stock").offset().top - 70
+                    }, 1000);
+                });
+                
+                $("#clink").click(function (){
+                    $('html, body').animate({
+                        scrollTop: $("#cbond").offset().top - 70
+                    }, 1000);
+                });
+                
+                $("#etflink").click(function (){
+                    $('html, body').animate({
+                        scrollTop: $("#etf").offset().top - 70
+                    }, 1000);
+                });
+                
+                $("#mflink").click(function (){
+                    $('html, body').animate({
+                        scrollTop: $("#mf").offset().top - 70
+                    }, 1000);
+                });
+            });
+        </script>
+        <link rel="stylesheet" href="assets/css/learn.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand navbar-light bg-light" style="width: 100%; position: fixed; z-index: 50;">
+          <div class="container">
+            <!-- <a class="navbar-brand" href="index.html" style="color: #CDA5E5;"><img src="assets/img/sokat-logo.png" alt="" style="width: 200px; height: 50px;"></a> -->
+            <a id="slink" href="#stock">Environment</a>
+            <a id="clink" href="#cbond">Social Capital</a>
+            <a id="etflink" href="#etf">Human Capital</a>
+            <a id="mflink" href="#mf">Business Model & Innovation</a>
+            <a id="mflink" href="#mf">Leadership & Governance</a>
+          </div>
+        </nav>
+        <div class="list-group" style="position: absolute; top: 80px;">
+          <div class="list-group-item list-group-item-action" id="stock">
+            <h3>Environment</h3>
+            <p>This dimension includes environmental impacts, either through the use of nonrenewable, natural resources as inputs to the factors of production or through harmful releases into the environment that may result in impacts to the company’s financial condition or operating performance.</p>
+        
+          </div>
+          <div class="list-group-item list-group-item-action" id="cbond">
+                <h3>Social Capital</h3>
+                <p> This dimension relates to the expectation that a business will contribute to society in return for a social license to operate. It addresses the management of relationships with key outside parties, such as customers, local communities, the public, and the government. It includes issues related to human rights, protection of vulnerable groups, local economic development, access to and quality of products and services, affordability, responsible business practices in marketing, and customer privacy. </p>
+          </div>
+          <div class="list-group-item list-group-item-action" id="etf">
+              <h3>Human Capital</h3>
+              <p>This dimension addresses the management of a company’s human resources (employees and individual contractors) as key assets to delivering long-term value. It includes issues that affect the productivity of employees, management of labor relations, and management of the health and safety of employees and the ability to create a safety culture.</p>
+             
+          </div>
+          <div class="list-group-item list-group-item-action" id="mf">
+              <h3>Business Model & Innovation</h3>
+              <p>This dimension addresses the integration of environmental, human, and social issues in a company’s value-creation process, including resource recovery and other innovations in the production process; as well as in product innovation, including efficiency and responsibility in the design, use phase, and disposal of products.</p>
+              
+          </div>
+          <div class="list-group-item list-group-item-action" id="m1f">
+            <h3>Leadership & Goveranance</h3>
+            <p>This dimension involves the management of issues that are inherent to the business model or common practice in the industry and that are in potential conflict with the interest of broader stakeholder groups, and therefore create a potential liability or a limitation or removal of a license to operate. This includes regulatory compliance, risk management, safety management, supply-chain and materials sourcing, conflicts of interest, anticompetitive behavior, and corruption and bribery.</p>
+        
+        </div>
+    </div>
+    </body>
+</html>

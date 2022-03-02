@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.min.js" integrity="sha512-W/mRQs9ZSFpF14X/4aRgQss7+HRsVXsph+Y6DGLeqIqK8IpO+rQz0ISUEXkTeeKF7tivoGv+Ru7SpocS/1qahg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/dashboard.css">
+    <script src="https://kit.fontawesome.com/84033bb3c1.js" crossorigin="anonymous"></script>
+    <title>Climate Dashboard</title>
+</head>
+<header>
+    <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+  <div class="container">
+    <a class="navbar-brand" href="/index.html">Climate Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/benchmarking.html">Climate Relative Benchmarking</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/benchmarking.html">Climate Oversight</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/benchmarking.html">Climate Strategy</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/benchmarking.html">Climate Targets</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/sample_page.html">GHG Footprint</a>
+        <li class="nav-item">
+          <a class="nav-link" href="others.html">TCFD Readiness Matrix</a>
+        <li class="nav-item">
+          <a class="nav-link" href="TCFD.html">TCFD Resources</a>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="reports.html">Company Reports</a> -->
+            
+        </li>
+      </ul>
+    </div>      
+  </div>
+  <div class="searchbar">
+    <input type="text" placeholder="Search a Company">
+
+    <!-- <form id="form"> 
+      <input type="search" id="query" name="q" placeholder="Search a Company">
+      <!-- <button>Search</button> -->
+    <!-- </form> -->
+ 
+  </nav>
+
+</header>
+
+
+<br>
+
+<main class="container">
+  <!-- Main body -->
+  <div>
+    <div class="block-line">
+      <h2 class="animated slideInUp" id="title"></h2>
+      <br>
+    </div>
+    <div class="row">
+        <div class="col-3 animated slideInUp" >    
+            <div class = "card text-center">
+            </div>
+            <div class="card">
+                <div class = "card-header text-left">Company TCFD Readiness Score</div>
+                <div class="card-body">
+                  <div id = "pie"></div>
+                </div>
+            </div>      
+            <br />
+            
+            <!-- UPDATED -->
+            <div class="card articles">
+              <div class = "card-header text-left">Headlines</div>
+              <div class="card-body">
+                <ul id="articles" class="list-group">
+                </ul>
+              </div>
+          </div>
+          <br />      
+          <div class="card ghg">
+            <div class = "card-header text-left">GHG Emission</div>
+            <div class="card-body">
+              <table class="table table-striped">
+                <thead class="default-color">
+                  <tr>
+                    <th scope="col">Metric</th>
+                    <th scope="col">FY2020</th>
+                    <th scope="col">FY2019</th>
+                    <!-- <th scope="col">GHG Scope 3</th> -->
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class = "number1">
+                    <th scope="row">GHG Scope1 </th>
+                    <td>13,500</td>
+                    <td>23,746</td>
+                    
+                  </tr>
+                  <tr class = "number2">
+                    <th scope="row">GHG Scope2</i></th>
+                    <td>21,908</td>
+                    <td>27,970</td>
+                    
+                  </tr>
+                  <tr class = "number3">
+                    <th scope="row">GHG Scope3 </i></th>
+                    <td>5,666</td>
+                    <td>17,819</td>
+      
+                  </tr>
+                  
+                </tbody>
+              </table>
+              
+            </div>
+          </div>      
+          
+        </div>
+        
+        <div class="col-9 animated slideInUp" id = "day-month-total"> 
+            <div class ="card text-center">
+                <div class = "card-header text-left" id="stats-title"></div>
+                <!-- UPDATED -->
+                <div class = "card-body">
+                  <div id="top-right-stats" class="row">
+                  </div>
+                </div>
+            </div>
+            <br>
+            
+            <div class = "row">
+                <div class = "col">
+
+                </div>
+                <div class = "col">
+                    
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col city-rank">
+                    <div class = "card">
+                          <div class = "card-header text-left">Climate Report</div>
+                          <table id="mid-table-stats" class="table table-striped">
+                            <thead class="default-color">
+                              <tr>
+                                <th scope="col" class="th-title">Climate Metric</th>
+                                <th scope="col">2021</th>
+                                <th scope="col">2020</th>
+                                <th scope="col">2019</th>
+                                <!-- <th scope="col">2018</th>
+                                <th scope="col">2017</th>
+                                <th scope="col">2016</th> -->
+                              </tr>
+                            </thead>
+                            <tbody>
+                             <!-- UPDATED -->
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class ="card"> 
+              <div class = "card-header">TCFD Readiness Score</div>
+              <div class = "card-body">
+                <!-- <figure class = "container block" id ="line-chart"></figure> -->
+                <figure class = "container block" id ="bar-chart"></figure>
+                <figure class = "container block" id ="container"></figure>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+
+
+    
+</main>   
+<br />
+
+<footer class="page-footer font-small default-color">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2022 Copyright:
+      <a href="https://nasdaq.com/"> NASDAQ</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+    <script src="./resources/utils.js"></script>
+    <script src="./resources/company.js"></script>
+</body>
+</html>

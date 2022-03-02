@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+  <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src = "./resources/main.js"></script>
+
+    <!-- <script src="static/jquery-3.3.1.min.js"></script> -->
+    <!-- 引入 highcharts.js -->
+    <!-- <script src="static/highcharts-7.0.3.js"></script></head> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.15.0/css/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="./script.js"></script>
+    <link rel="stylesheet" href="./resources/dashboard.css">
+    <script src="https://kit.fontawesome.com/84033bb3c1.js" crossorigin="anonymous"></script>
+    <title>SASB</title>
+</head>
+
+
+
+<header>
+    <!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark default-color">
+    <a class="navbar-brand" href="#">SASB <i class="fab fa-bootstrap"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+      aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-center" href="#">
+            
+            SASB
+
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Relative Benchmarking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Financials/WACC</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Dropdown
+          </a>
+          <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right dropdown-default"
+            aria-labelledby="navbarDropdownMenuLink-333">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</header>
+<br>
+
+<main class = "container">
+    <div class = "block-line">
+        <h2 class = "animated slideInUp">NASDAQ ESG ADVISORY DASHBOARD</h2>
+            <br>
+    </div>
+    <div class="row">
+        <div class="col-md animated slideInUp" >
+            
+            <div class = "card text-center">
+            <div class = "card-header text-left">SASB</div>
+            <table class="table table-striped">
+                <thead class="default-color">
+                  <tr>
+                    <th scope="col">GHG Metric</th>
+                    <th scope="col">2020</th>
+                    <th scope="col">2019</th>
+                    <th scope="col">2018</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">GHG Scope 1</th>
+                    <td>20</td> 
+                    <td>10</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GHG Scope 2</th>
+                    <td>20</td>
+                    <td>10</td>
+                    <td>8</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">GHG Scope 3</th>
+                    <td>30</td>
+                    <td>20</td>
+                    <td>10</td>
+                  </tr>
+                </tbody>
+              </table>
+          
+            </div>
+            <br>
+            <div class="card">
+                <div class = "card-header text-left">SASB</div>
+                <div class="card-body">
+                  
+                  <div id = "pie"></div>
+                  
+                </div>
+              </div>
+              
+        </div>
+        
+        <div class="col-xl-auto animated slideInUp" id = "day-month-total">
+            
+           
+            
+            <div class ="card text-center">
+                <div class = "card-header text-left">
+                    Hertz Main ESG SASB Stats
+                </div>
+                <div class = "card-body">
+                    <div class = "row">
+                        
+                        <div class = "col">
+                            <div class ="container text-center"> 
+                                <div class = "text-white">
+                                    <h1>70<i class="fas fa-arrow-up"></i></h1>
+                                    <p>TTM SASB Intelligence Score</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "col">
+                            <div class ="container text-center"> 
+                                <div class =  "text-black">
+                                   <h1>100 <i class="fas fa-arrow-down"></i></h1>
+                                   <p>SASB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "col-auto">
+                            <div class ="container text-center"> 
+                                <div class = "text-black">
+                                    <h1>64<i class="fas fa-arrow-up"></i></h1>
+                                    <p>SASB</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class = "row month-total">
+                <div class = "col">
+                    <div class ="card text-center">
+                        <div class = "card-header text-left">
+                          SASB
+                        </div>
+                        <div class = "card-body">
+                            <div class = "row">
+                                
+                                <div class = "col">
+                                    <div class ="container text-center"> 
+                                        <div class = "text-black">
+                                            <h5>70</h5>
+                                            <p>SASB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "col">
+                                    <div class ="container text-center"> 
+                                        <div class =  "text-black">
+                                           <h5>220 </h5>
+                                           <p>SASB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "col-auto">
+                                    <div class ="container text-center"> 
+                                        <div class = "text-black">
+                                            <h5>76</h5>
+                                            <p>SASB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col">
+                    <div class ="card text-center">
+                        <div class = "card-header text-left">
+                          SASB
+                        </div>
+                        <div class = "card-body">
+                            <div class = "row">
+                                
+                                <div class = "col">
+                                    <div class ="container text-center"> 
+                                        <div class = "text-black">
+                                            <h5>70</h5>
+                                            <p>SASB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "col">
+                                    <div class ="container text-center"> 
+                                        <div class =  "text-black">
+                                           <h5>580</h5>
+                                           <p>SASB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class = "col-auto">
+                                    <div class ="container text-center"> 
+                                        <div class = "text-black">
+                                            <h5>50</h5>
+                                            <p>SASB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+           
+            <br>
+            <div class = "row">
+                <div class = "col">
+
+                </div>
+                <div class = "col">
+                    
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col city-rank">
+                    <div class = "card text-center">
+                        <div class = "card-header text-left">SASB</div>
+                        <table class="table table-striped">
+                            <thead class="default-color">
+                              <tr>
+                                <th scope="col">GHG Scope 1</th>
+                                <th scope="col">GHG Scope 2</th>
+                                <th scope="col">GHG Scope 3</th>
+                                
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr class = "number1">
+                                <th scope="row">1 <i class="fas fa-arrow-up"></i></th>
+                                <td>SASB</td>
+                                <td>10</td>
+                                
+                              </tr>
+                              <tr class = "number2">
+                                <th scope="row">2 <i class="fas fa-arrow-down"></i></th>
+                                <td>SASB</td>
+                                <td>8</td>
+                                
+                              </tr>
+                              <tr class = "number3">
+                                <th scope="row">3 <i class="fas fa-minus"></i></th>
+                                <td>SASB</td>
+                                <td>5</td>
+                                
+                              </tr>
+                            </tbody>
+                          </table>
+                      
+                        </div>
+                </div>
+                <div class = "col team-rank">
+                    <div class = "card text-center">
+                        <div class = "card-header text-left">SASB</div>
+                        <table class="table table-striped">
+                            <thead class="default-color">
+                              <tr>
+                                <th scope="col">SASB</th>
+                                <th scope="col">SASB</th>
+                                <th scope="col">SASB</th>
+                                <th scope="col">SASB</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1 <i class="fas fa-arrow-up"></i></th>
+                                <td>SASB</td>
+                                <td>SASB</td>
+                                <td>8</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2 <i class="fas fa-minus"></i></th>
+                                <td>SASB</td>
+                                <td>SASB</td>
+                                <td>5</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3 <i class="fas fa-arrow-down"></i></th>
+                                <td>SASB</td>
+                                <td>SASB</td>
+                                <td>5</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                      
+                        </div>
+                </div>
+            </div>
+            <br>
+            <!-- <div class ="card"> 
+                <div class = "card-header">SASB</div>
+                <div class = "card-body">
+                    <figure class = "container block" id ="bar"></figure>
+                </div>
+            </div> -->
+          
+        </div>
+      </div>
+</main>
+
+  
+    
+
+<footer class="page-footer font-small default-color">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="https://nasdaq.com/"> NASDAQ</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+    
+    
+    <script src="./resources/main.js"></script>
+   
+</body>
+</html>

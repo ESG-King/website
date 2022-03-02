@@ -1,0 +1,160 @@
+/* main {
+  padding-top: 20px;
+} */
+
+main #bar {
+  width: 700px;
+  height: 400px;
+}
+main #pie {
+  width: 100%;
+  height: 300px;
+}
+/* HERE FIRST */
+body {
+  font-family: Microsoft JhengHei;
+  background-color: #1a1a1a;
+  /* #2e2e2e; */
+}
+
+h2,
+h3 {
+  color: #fff;
+}
+button {
+  height: 2.375rem;
+  text-transform: capitalize !important;
+  font-size: 1rem !important;
+  padding: 0 1.75rem !important;
+  margin: 0 !important;
+  align-self: flex-start;
+  color: #fff !important;
+}
+
+#mid-table-stats {
+  margin-bottom: 0;
+}
+#competitor-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+#pie {
+  pointer-events: none;
+}
+.articles {
+  max-height: 600px;
+  overflow: auto;
+}
+.th-title {
+  padding-left: 1.25rem !important;
+}
+/* HERE THE 2ND */
+.card {
+  background-color:#252528;
+  color: white;
+}
+.card p {
+  color: #fff;
+}
+.card-header {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: #263238  !important; */
+}
+
+/* arrows */
+.fa-arrow-down {
+  font-size: 0.3em;
+  color: #ff4444;
+}
+.fa-arrow-up {
+  font-size: 0.3em;
+  color: #33b5e5;
+}
+.team-rank .fa-arrow-up {
+  font-size: 0.8em;
+}
+.team-rank .fa-arrow-down {
+  font-size: 0.8em;
+}
+.city-rank .fa-arrow-up {
+  font-size: 0.8em;
+}
+.city-rank .fa-arrow-down {
+  font-size: 0.8em;
+}
+.fa-minus {
+  font-size: 0.3em;
+  color: #ffbb33;
+}
+.city-rank .fa-minus {
+  font-size: 0.8em;
+}
+.team-rank .fa-minus {
+  font-size: 0.8em;
+}
+.month-total .p {
+  font-size: 0.8em;
+}
+.list-group-item {
+  background-color: unset;
+  border: 1px solid #fff;
+}
+.list-group-item a {
+  color: #fff;
+}
+.list-group-item a:hover {
+  opacity: 0.4;
+}
+.selected {
+  display: none;
+}
+.dropdown-container {
+  height: 100vh;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn-dropdown {
+  width: 100%;
+  text-align: left;
+  padding-left: 0.75rem;
+}
+.custom-select,
+.btn {
+  padding-left: 1.75rem;
+  color: #fff;
+  background-color: #252528;
+  border-color: #252528;
+}
+.custom-select:focus {
+  border-color: #252528; 
+  box-shadow: unset;
+}
+.linear-chart-row > div:nth-child(2) {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.dropdown-menu {
+  width: 100%;
+}
+.highcharts-credits {
+  display: none;
+}
+
+/* media queries */
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+.default-color {
+  background-color:#252528 !important
+}

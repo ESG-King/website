@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <title>TCFD Readiness Map</title>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-heatmap.min.js"></script>
+    <style>
+      html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: 2;
+        padding: 0;
+        background-color:#212529;
+        
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="container"></div>
+    <script>
+      'Climate Oversight A',
+      'Climate Oversight B',
+      'Climate Strategy A',
+      'Climate Strategy B',
+      'Climate Strategy C',
+      'Climate Risk A',
+      'Climate Risk B',
+      'Climate Risk C',
+      'Climate Targets A',
+      'Climate Targets B',
+      'Climate Targets C',
+      anychart.onDocumentReady(function () {
+
+        // create the data 
+        var data = [
+          { x: "Climate Oversight A", y: "Selective Insurance", heat: 0.676 },
+          { x: "Climate Oversight A", y: "Travelers", heat: 0.691 },
+          { x: "Climate Oversight A", y: "Prudential", heat: 0.735 },
+          { x: "Climate Oversight A", y: "Hartford", heat: 0.731 },
+          { x: "Climate Oversight A", y: "MetLife", heat: 0.585 },
+          { x: "Climate Oversight A", y: "Reinsurance", heat: 0.498 },
+          { x: "Climate Oversight B", y: "Selective Insurance", heat: 0.681 },
+          { x: "Climate Oversight B", y: "Travelers", heat: 0.700 },
+          { x: "Climate Oversight B", y: "Prudential", heat: 0.744 },
+          { x: "Climate Oversight B", y: "Hartford", heat: 0.737 },
+          { x: "Climate Oversight B", y: "MetLife", heat: 0.593 },
+          { x: "Climate Oversight B", y: "Reinsurance", heat: 0.505 },
+          { x: "Climate Strategy A", y: "Selective Insurance", heat: 0.687 },
+          { x: "Climate Strategy A", y: "Travelers", heat: 0.707 },
+          { x: "Climate Strategy A", y: "Prudential", heat: 0.750 },
+          { x: "Climate Strategy A", y: "Hartford", heat: 0.740 },
+          { x: "Climate Strategy A", y: "MetLife", heat: 0.601 },
+          { x: "Climate Strategy A", y: "Reinsurance", heat: 0.512 },
+          { x: "Climate Strategy B", y: "Selective Insurance", heat: 0.688 },
+          { x: "Climate Strategy B", y: "Travelers", heat: 0.714 },
+          { x: "Climate Strategy B", y: "Prudential", heat: 0.759 },
+          { x: "Climate Strategy B", y: "Hartford", heat: 0.748 },
+          { x: "Climate Strategy B", y: "MetLife", heat: 0.607 },
+          { x: "Climate Strategy B", y: "Reinsurance", heat: 0.521 },
+          { x: "Climate Strategy C", y: "Selective Insurance", heat: 0.691 },
+          { x: "Climate Strategy C", y: "Travelers", heat: 0.721 },
+          { x: "Climate Strategy C", y: "Prudential", heat: 0.766 },
+          { x: "Climate Strategy C", y: "Hartford", heat: 0.752 },
+          { x: "Climate Strategy C", y: "MetLife", heat: 0.617 },
+          { x: "Climate Strategy C", y: "Reinsurance", heat: 0.527 },
+          { x: "Climate Risk A", y: "Selective Insurance", heat: 0.695 },
+          { x: "Climate Risk A", y: "Travelers", heat: 0.727 },
+          { x: "Climate Risk A", y: "Prudential", heat: 0.770 },
+          { x: "Climate Risk A", y: "Hartford", heat: 0.754 },
+          { x: "Climate Risk A", y: "MetLife", heat: 0.624 },
+          { x: "Climate Risk A", y: "Reinsurance", heat: 0.532 },
+          { x: "Climate Risk B", y: "Selective Insurance", heat: 0.699 },
+          { x: "Climate Risk B", y: "Travelers", heat: 0.733 },
+          { x: "Climate Risk B", y: "Prudential", heat: 0.772 },
+          { x: "Climate Risk B", y: "Hartford", heat: 0.756 },
+          { x: "Climate Risk B", y: "MetLife", heat: 0.634 },
+          { x: "Climate Risk B", y: "Reinsurance", heat: 0.535 },
+          { x: "Climate Risk C", y: "Selective Insurance", heat: 0.699 },
+          { x: "Climate Risk C", y: "Travelers", heat: 0.733 },
+          { x: "Climate Risk C", y: "Prudential", heat: 0.771 },
+          { x: "Climate Risk C", y: "Hartford", heat: 0.758 },
+          { x: "Climate Risk C", y: "MetLife", heat: 0.638 },
+          { x: "Climate Risk C", y: "Reinsurance", heat: 0.537 },
+          { x: "Climate Targets A", y: "Selective Insurance", heat: 0.703 },
+          { x: "Climate Targets A", y: "Travelers", heat: 0.741 },
+          { x: "Climate Targets A", y: "Prudential", heat: 0.779 },
+          { x: "Climate Targets A", y: "Hartford", heat: 0.759 },
+          { x: "Climate Targets A", y: "MetLife", heat: 0.642 },
+          { x: "Climate Targets A", y: "Reinsurance", heat: 0.541 },
+          { x: "Climate Targets B", y: "Selective Insurance", heat: 0.703 },
+          { x: "Climate Targets B", y: "Travelers", heat: 0.741 },
+          { x: "Climate Targets B", y: "Prudential", heat: 0.779 },
+          { x: "Climate Targets B", y: "Hartford", heat: 0.759 },
+          { x: "Climate Targets B", y: "MetLife", heat: 0.642 },
+          { x: "Climate Targets B", y: "Reinsurance", heat: 0.541 },
+          { x: "Climate Targets C", y: "Selective Insurance", heat: 0.703 },
+          { x: "Climate Targets C", y: "Travelers", heat: 0.741 },
+          { x: "Climate Targets C", y: "Prudential", heat: 0.779 },
+          { x: "Climate Targets C", y: "Hartford", heat: 0.759 },
+          { x: "Climate Targets C", y: "MetLife", heat: 0.642 },
+          { x: "Climate Targets C", y: "Reinsurance", heat: 0.541 },
+
+          { x: "Climate Oversight A", y: "Aon", heat: 0.676 },
+          { x: "Climate Oversight B", y: "Aon", heat: 0.681 },
+          { x: "Climate Strategy A", y: "Aon", heat: 0.687 },
+          { x: "Climate Strategy B", y: "Aon", heat: 0.688 },
+          { x: "Climate Strategy C", y: "Aon", heat: 0.691 },
+          { x: "Climate Risk A", y: "Aon", heat: 0.695 },
+          { x: "Climate Risk B", y: "Aon", heat: 0.772 },
+          { x: "Climate Risk C", y: "Aon", heat: 0.771 },
+          { x: "Climate Targets A", y: "Aon", heat: 0.741 },
+          { x: "Climate Targets B", y: "Aon", heat: 0.703 },
+          { x: "Climate Targets C", y: "Aon", heat: 0.759 },
+
+          { x: "Climate Oversight A", y: "Voya", heat: 0.676 },
+          { x: "Climate Oversight B", y: "Voya", heat: 0.681 },
+          { x: "Climate Strategy A", y: "Voya", heat: 0.687 },
+          { x: "Climate Strategy B", y: "Voya", heat: 0.688 },
+          { x: "Climate Strategy C", y: "Voya", heat: 0.691 },
+          { x: "Climate Risk A", y: "Voya", heat: 0.695 },
+          { x: "Climate Risk B", y: "Voya", heat: 0.772 },
+          { x: "Climate Risk C", y: "Voya", heat: 0.771 },
+          { x: "Climate Targets A", y: "Voya", heat: 0.741 },
+          { x: "Climate Targets B", y: "Voya", heat: 0.703 },
+          { x: "Climate Targets C", y: "Voya", heat: 0.759 },
+
+        //   { x: "Climate Oversight A", y: "MetLife", heat: 0.676 },
+        //   { x: "Climate Oversight B", y: "MetLife", heat: 0.681 },
+        //   { x: "Climate Strategy A", y: "MetLife", heat: 0.687 },
+        //   { x: "Climate Strategy B", y: "MetLife", heat: 0.688 },
+        //   { x: "Climate Strategy C", y: "MetLife", heat: 0.691 },
+        //   { x: "Climate Risk A", y: "MetLife", heat: 0.695 },
+        //   { x: "Climate Risk B", y: "MetLife", heat: 0.772 },
+        //   { x: "Climate Risk C", y: "MetLife", heat: 0.771 },
+        //   { x: "Climate Targets A", y: "MetLife", heat: 0.741 },
+        //   { x: "Climate Targets B", y: "MetLife", heat: 0.703 },
+        //   { x: "Climate Targets C", y: "MetLife", heat: 0.759 },
+
+          { x: "Climate Oversight A", y: "Argo", heat: 0.676 },
+          { x: "Climate Oversight B", y: "Argo", heat: 0.681 },
+          { x: "Climate Strategy A", y: "Argo", heat: 0.687 },
+          { x: "Climate Strategy B", y: "Argo", heat: 0.688 },
+          { x: "Climate Strategy C", y: "Argo", heat: 0.691 },
+          { x: "Climate Risk A", y: "Argo", heat: 0.695 },
+          { x: "Climate Risk B", y: "Argo", heat: 0.772 },
+          { x: "Climate Risk C", y: "Argo", heat: 0.771 },
+          { x: "Climate Targets A", y: "Argo", heat: 0.741 },
+          { x: "Climate Targets B", y: "Argo", heat: 0.703 },
+          { x: "Climate Targets C", y: "Argo", heat: 0.759 },
+
+          { x: "Climate Oversight A", y: "Lincoln", heat: 0.676 },
+          { x: "Climate Oversight B", y: "Lincoln", heat: 0.681 },
+          { x: "Climate Strategy A", y: "Lincoln", heat: 0.687 },
+          { x: "Climate Strategy B", y: "Lincoln", heat: 0.688 },
+          { x: "Climate Strategy C", y: "Lincoln", heat: 0.691 },
+          { x: "Climate Risk A", y: "Lincoln", heat: 0.695 },
+          { x: "Climate Risk B", y: "Lincoln", heat: 0.772 },
+          { x: "Climate Risk C", y: "Lincoln", heat: 0.771 },
+          { x: "Climate Targets A", y: "Lincoln", heat: 0.741 },
+          { x: "Climate Targets B", y: "Lincoln", heat: 0.703 },
+          { x: "Climate Targets C", y: "Lincoln", heat: 0.759 },
+
+          { x: "Climate Oversight A", y: "Aflac", heat: 0.676 },
+          { x: "Climate Oversight B", y: "Aflac", heat: 0.681 },
+          { x: "Climate Strategy A", y: "Aflac", heat: 0.687 },
+          { x: "Climate Strategy B", y: "Aflac", heat: 0.688 },
+          { x: "Climate Strategy C", y: "Aflac", heat: 0.691 },
+          { x: "Climate Risk A", y: "Aflac", heat: 0.695 },
+          { x: "Climate Risk B", y: "Aflac", heat: 0.772 },
+          { x: "Climate Risk C", y: "Aflac", heat: 0.771 },
+          { x: "Climate Targets A", y: "Aflac", heat: 0.741 },
+          { x: "Climate Targets B", y: "Aflac", heat: 0.703 },
+          { x: "Climate Targets C", y: "Aflac", heat: 0.759 },
+
+          { x: "Climate Oversight A", y: "Cincinnati", heat: 0.676 },
+          { x: "Climate Oversight B", y: "Cincinnati", heat: 0.681 },
+          { x: "Climate Strategy A", y: "Cincinnati", heat: 0.687 },
+          { x: "Climate Strategy B", y: "Cincinnati", heat: 0.688 },
+          { x: "Climate Strategy C", y: "Cincinnati", heat: 0.691 },
+          { x: "Climate Risk A", y: "Cincinnati", heat: 0.695 },
+          { x: "Climate Risk B", y: "Cincinnati", heat: 0.772 },
+          { x: "Climate Risk C", y: "Cincinnati", heat: 0.771 },
+          { x: "Climate Targets A", y: "Cincinnati", heat: 0.741 },
+          { x: "Climate Targets B", y: "Cincinnati", heat: 0.703 },
+          { x: "Climate Targets C", y: "Cincinnati", heat: 0.759 },
+
+          { x: "Climate Oversight A", y: "United Fire Group", heat: 0.676 },
+          { x: "Climate Oversight B", y: "United Fire Group", heat: 0.681 },
+          { x: "Climate Strategy A", y: "United Fire Group", heat: 0.687 },
+          { x: "Climate Strategy B", y: "United Fire Group", heat: 0.688 },
+          { x: "Climate Strategy C", y: "United Fire Group", heat: 0.691 },
+          { x: "Climate Risk A", y: "United Fire Group", heat: 0.695 },
+          { x: "Climate Risk B", y: "United Fire Group", heat: 0.772 },
+          { x: "Climate Risk C", y: "United Fire Group", heat: 0.1 },
+          { x: "Climate Targets A", y: "United Fire Group", heat: 0.741 },
+          { x: "Climate Targets B", y: "United Fire Group", heat: 0.703 },
+          { x: "Climate Targets C", y: "United Fire Group", heat: 0.759 },
+
+          { x: "Climate Oversight A", y: "Hanover Insurance", heat: 0.676 },
+          { x: "Climate Oversight B", y: "Hanover Insurance", heat: 0.681 },
+          { x: "Climate Strategy A", y: "Hanover Insurance", heat: 0.687 },
+          { x: "Climate Strategy B", y: "Hanover Insurance", heat: 0.688 },
+          { x: "Climate Strategy C", y: "Hanover Insurance", heat: 0.691 },
+          { x: "Climate Risk A", y: "Hanover Insurance", heat: 0.695 },
+          { x: "Climate Risk B", y: "Hanover Insurance", heat: 0.772 },
+          { x: "Climate Risk C", y: "Hanover Insurance", heat: 0.771 },
+          { x: "Climate Targets A", y: "Hanover Insurance", heat: 0.741 },
+          { x: "Climate Targets B", y: "Hanover Insurance", heat: 0.703 },
+          { x: "Climate Targets C", y: "Hanover Insurance", heat: 0.759 },
+        ];        
+        
+        // create the chart and set the data
+        chart = anychart.heatMap(data);
+        
+        // set the chart title
+        chart.title("Task Force on Climate-Related Financial Disclosures | TCFD Readiness Insurance Peer Group");
+        // chart.openModal("OK. Now I'm serious.");
+
+        // create and configure the color scale.
+        var customColorScale = anychart.scales.linearColor();
+        customColorScale.colors(["#37474F", "#fff"]);
+        //     var customColorScale = anychart.scales.ordinalColor();
+        // customColorScale.ranges([
+        // { less: 0.549, name: 'Low: <= 0.549', color: '#CF7A78' },
+        // { from: 0.550, to: 0.699, name: 'Medium: 0.55 - 0.699', color: '#E69645' },
+        // { from: 0.700, to: 0.799, name: 'High: 0.7 - 0.799', color: '#69A231' },
+        // { greater: 0.800, name: 'Very High: >=0.8', color: '#4D7623' }
+        // ]);
+        
+        // set the color scale as the color scale of the chart
+        chart.colorScale(customColorScale);
+        chart.background().fill({
+  keys: ["#212529", "#212529", "#212529"],
+  angle: 130,
+});
+        
+        // set the container id
+        chart.container("container");
+        
+        // initiate drawing the chart
+        chart.draw();
+        
+      });
+    //   var customColorScale = anychart.scales.ordinalColor();
+    //     customColorScale.ranges([
+    //     { less: 0.549, name: 'Low: <= 0.549', color: '#CF7A78' },
+    //     { from: 0.550, to: 0.699, name: 'Medium: 0.55 - 0.699', color: '#E69645' },
+    //     { from: 0.700, to: 0.799, name: 'High: 0.7 - 0.799', color: '#69A231' },
+    //     { greater: 0.800, name: 'Very High: >=0.8', color: '#4D7623' }
+    //     ]);
+    </script>
+  </body>
+</html>
